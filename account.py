@@ -6,7 +6,10 @@ class Account:
         self.__balance += amount
 
     def take(self, amount):
-        self.__balance -= amount
+        if self.__balance - amount < 0:
+            print("Not enough credit available!")
+        else:
+            self.__balance -= amount
 
     def __str__(self):
         return f"Stan konta: {self.__balance}"
